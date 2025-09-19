@@ -1,0 +1,3 @@
+[submodule "packages/bnode-core"]
+	path = packages/bnode-core
+	url = git@git.rz.uni-augsburg.de:akajuliu/bnode-core.git
