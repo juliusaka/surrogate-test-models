@@ -34,3 +34,15 @@ University of Augsburg,
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Third-Party Licenses
+
+This project makes use of external code via git submodules.  
+Please see the individual submodules for their licenses.  
+In particular:
+- ClaRa development team code (BSD 3-Clause) → see `third_party_licenses/ClaRa.md`
+
+### Dependency on Dymola® for FMU generation
+
+This project contains Python code that uses the **Dymola® Python Interface**. Dymola® is proprietary software by Dassault Systèmes and is **not included** in this repository.  
+To run the the FMU generation scripts in this repository, you must have your **own licensed installation of Dymola®**.
