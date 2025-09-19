@@ -1,7 +1,7 @@
 # surrogate-test-models
 
 ## Description
-This repository is a collection of free test models for surrogate generation, for which no intellectual property rights exist. The models are modelled in Modelica and provided as FMUs (following the [FMI standard](https://fmi-standard.org/)) exported from Dymola. The models are intended to be used for testing surrogate generation methods and tools. 
+This repository is a collection of free test models for surrogate generation, for which no intellectual property rights exist. The models are modelled in Modelica, exported as FMUs (following the [FMI standard](https://fmi-standard.org/)) from Dymola and can be used within this repository to generate datasets to train data-driven surrogate methods. 
 
 ## Cloning this repository
 `git lfs` is enabled for this repository to efficiently store large files. You can simply clone the repository using:
