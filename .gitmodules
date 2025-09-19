@@ -1,3 +1,6 @@
 [submodule "packages/bnode-core"]
 	path = packages/bnode-core
 	url = git@git.rz.uni-augsburg.de:akajuliu/bnode-core.git
+[submodule "libraries/ClaRa-official"]
+	path = libraries/ClaRa-official
+	url = https://github.com/xrg-simulation/ClaRa-official.git
