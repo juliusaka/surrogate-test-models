@@ -21,6 +21,7 @@
 *.mop.htm
 *.xml
 *.mof
+*.bak-mo
 
 # Dymola simulation results
 *.dsres
@@ -40,3 +41,8 @@
 # Ignore Dymola libraries (if applicable)
 *.a
 *.lib
+
+# just for now: ignore fmus
+*.fmu
+
+*.pyc
