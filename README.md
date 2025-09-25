@@ -62,6 +62,8 @@ uv run export-fmu --help
 uv run export-fmu models/ClaRaTester/SteamCycle_01.mo ./models/ClaRaTester/libraries.txt --CopyExternalResources
 ```
 
+for more information, see the [dymola-python-interface-wrapper README](packages/dymola-python-interface-wrapper/README.md).
+
 #### Batch Generation
 
 For regenerating all FMUs of this repository, use the provided script:
@@ -90,8 +92,8 @@ Each (Modelica) model package in the `models/` directory contains:
 
 The `libraries.txt` file should contain relative paths to library files, one per line:
 ```
-ClaRa/ClaRa.mo
-SomeOtherLib/SomeOtherLib.mo
+./../..libraries/ClaRa/package.mo
+./package.mo
 ```
 ### Using fmpy to simulate FMUs
 You can use the [fmpy](https://pypi.org/project/FMPy/) package to simulate the generated FMUs.
