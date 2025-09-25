@@ -11,6 +11,7 @@ dependencies = []
 
 [project.scripts]
 dymola-python-docs = "dymola_python_interface_wrapper.open_docs:open_docs"
+export-fmu = "dymola_python_interface_wrapper.export_fmu:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]
