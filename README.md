@@ -64,8 +64,7 @@ uv run export-fmu models/ClaRaTester/SteamCycle_01.mo ./models/ClaRaTester/libra
 
 #### Batch Generation
 
-For generating multiple FMUs, use the provided script:
-
+For regenerating all FMUs of this repository, use the provided script:
 - **Git Bash**: `bash generate_fmus.sh`
 
 #### Generated Files
