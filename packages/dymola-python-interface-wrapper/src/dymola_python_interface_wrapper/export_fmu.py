@@ -18,7 +18,18 @@ def export_fmu(model_path: str, library_path: str, libraries_to_load_path: str, 
     
     # Prepare model name early for logging setup
     model_to_open = str(model_path.relative_to(pathlib.Path(library_path).parent).with_suffix("").as_posix())
-    fmu_name = model_to_open.split("/")[-1]
+    # Use provided fmu_name if available, otherwise derive from model path
+    if fmu_args.fmu_name:
+        fmu_name = fmu_args.fmu_name
+        if fmu_name.endswith(".fmu"):
+            fmu_name = fmu_name.split(".fmu")[0]
+    else:
+        fmu_name = model_to_open.split("/")[-1]
+    
+    # Add suffix if provided
+    if fmu_args.fmu_name_suffix:
+        fmu_name = f"{fmu_name}_{fmu_args.fmu_name_suffix}"
+    
     model_to_open = model_to_open.replace("/", ".")
     
     # Set up logging to save alongside FMU
@@ -93,6 +104,9 @@ def export_fmu(model_path: str, library_path: str, libraries_to_load_path: str, 
     if dymola.DymolaVersionNumber() >= 2025:
         execute_command(f"Advanced.FMI.UseInputSmoother = {'true' if fmu_args.UseInputSmoother else 'false'};")
         execute_command(f"Advanced.FMI.UsePredictorCompensation = {'true' if fmu_args.UsePredictorCompensation else 'false'};")
+    else:
+        if fmu_args.UseInputSmoother or fmu_args.UsePredictorCompensation:
+            raise ValueError("UseInputSmoother and UsePredictorCompensation options require Dymola 2025 or later.")
     execute_command(f"Advanced.FMI.CopyExternalResources = {'true' if fmu_args.CopyExternalResources else 'false'};")
 
     # Prepare arguments for translateModelFMU
@@ -157,6 +171,8 @@ def main():
     parser.add_argument("model_path", type=str, help="Path to the Modelica model (e.g., 'models/ClaRaTester/SteamCycle_01.mo').")
     parser.add_argument("library_path", type=str, help="Path to the root of the Modelica libraries to load (e.g., 'models/myLib').")
     parser.add_argument("libraries_file", type=str, help="Path to a .txt-file containing libraries to load, one per line in the format 'package_name/package_name.mo'. Relative to library_path.")
+    parser.add_argument("--fmu_name", type=str, default=None, help="Optional name for the FMU. If not provided, the model name will be used.")
+    parser.add_argument("--fmu_name_suffix", type=str, default=None, help="Optional suffix to append to the FMU name.")
     
     parser.add_argument("--storeResults", action='store_true', help="Flag to store simulation results as mat files.")
     parser.add_argument("--fmiVersion", type=str, nargs='*', default=2, help="FMI version(s) to use for export (e.g., 1, 2, or 3).")
