@@ -2,7 +2,7 @@
 
 # Dymola results and log files
 *.mat
-*.txt
+# *.txt
 *.csv
 *.res
 *.log
@@ -30,6 +30,7 @@
 */bin/
 */build/
 */~FMUOutput/
+*FMUOutput/
 *.exe
 *.dll
 
