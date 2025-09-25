@@ -43,10 +43,12 @@
 *.a
 *.lib
 
-# just for now: ignore fmus
-*.fmu
-
 *.pyc
 
-# Dymola wd
+# Directories
 *.dymola_wd/
+*.vscode/
+
+# just for now: ignore and uv lock
+*.fmu
+uv.lock
