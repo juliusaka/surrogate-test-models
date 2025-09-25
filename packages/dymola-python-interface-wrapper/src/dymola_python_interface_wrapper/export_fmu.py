@@ -147,12 +147,12 @@ def export_fmu(model_path: str, libraries_to_load_path: str, fmu_args):
     # copy fmu to model directory (fmu_dir already created above)
     try: 
         os.replace(str(working_dir / f"{fmu_name}.fmu"), str(pathlib.Path(fmu_dir) / f"{fmu_name}.fmu"))
-        logger.info(f"FMU copied successfully to {fmu_dir / f'{fmu_name}.fmu'}")
+        logger.info(f"✅ FMU copied successfully to {fmu_dir / f'{fmu_name}.fmu'}")
         _target = os.path.relpath(fmu_dir / f"{fmu_name}.fmu", start=_script_wd.resolve())
         _target = pathlib.Path(_target).as_posix()
         script_lines.append(f'Modelica.Utilities.Files.move("{f"{fmu_name}.fmu"}", "{_target}", replace=true);')
     except Exception as e:
-        logger.error(f"Error occurred while copying FMU. Probably the FMU Generation was not successful. Error: {e}")
+        logger.error(f"❌ Error occurred while copying FMU. Probably the FMU Generation was not successful. Error: {e}")
         raise e
 
     dymola.close()
