@@ -5,11 +5,16 @@ import tempfile
 import os
 import logging
 
-def export_fmu(model_path: str, library_path: str, libraries_to_load_path: str, fmu_args):
+def export_fmu(model_path: str, libraries_to_load_path: str, fmu_args):
     from dymola.dymola_interface import DymolaInterface
     
     model_path = pathlib.Path(model_path)
     assert model_path.exists(), f"Model file {model_path} does not exist"
+    
+    # Infer library_dir from libraries_to_load_path (it should be the directory containing the libraries.txt file)
+    libraries_to_load_path = pathlib.Path(libraries_to_load_path)
+    assert libraries_to_load_path.exists(), f"Libraries file {libraries_to_load_path} does not exist"
+    library_dir = libraries_to_load_path.parent
 
     # Determine output directory for FMU and logging
     fmu_dir = model_path.parent
@@ -17,7 +22,7 @@ def export_fmu(model_path: str, library_path: str, libraries_to_load_path: str, 
         os.makedirs(fmu_dir)
     
     # Prepare model name early for logging setup
-    model_to_open = str(model_path.relative_to(pathlib.Path(library_path).parent).with_suffix("").as_posix())
+    model_to_open = str(model_path.relative_to(library_dir.parent).with_suffix("").as_posix())
     # Use provided fmu_name if available, otherwise derive from model path
     if fmu_args.fmu_name:
         fmu_name = fmu_args.fmu_name
@@ -70,10 +75,10 @@ def export_fmu(model_path: str, library_path: str, libraries_to_load_path: str, 
     dymola = DymolaInterface(showwindow=True)
     
     if libraries_to_load_path is not None:
-        with open(pathlib.Path(library_path) / libraries_to_load_path, "r") as lib_file:
+        with open(libraries_to_load_path, "r") as lib_file:
             for _lib in lib_file:
                 lib = _lib.strip()
-                lib = pathlib.Path(library_path+ lib)
+                lib = library_dir / lib
                 if lib:
                     assert lib.suffix == ".mo", f"Library file must be a .mo file, got {lib}"
                     assert lib.exists(), f"Library file {lib} does not exist"
@@ -169,8 +174,7 @@ def main():
     # This script expects the modelica package to not be saved as one file, but as a directory structure.
     
     parser.add_argument("model_path", type=str, help="Path to the Modelica model (e.g., 'models/ClaRaTester/SteamCycle_01.mo').")
-    parser.add_argument("library_path", type=str, help="Path to the root of the Modelica libraries to load (e.g., 'models/myLib').")
-    parser.add_argument("libraries_file", type=str, help="Path to a .txt-file containing libraries to load, one per line in the format 'package_name/package_name.mo'. Relative to library_path.")
+    parser.add_argument("libraries_file", type=str, help="Full path to a .txt-file containing libraries to load, one per line in the format 'package_name/package_name.mo'. The libraries.txt file should be placed at the top level of the package directory, and library paths in the file are relative to that directory.")
     parser.add_argument("--fmu_name", type=str, default=None, help="Optional name for the FMU. If not provided, the model name will be used.")
     parser.add_argument("--fmu_name_suffix", type=str, default=None, help="Optional suffix to append to the FMU name.")
     
@@ -192,7 +196,6 @@ def main():
 
     export_fmu(
         model_path=args.model_path,
-        library_path=args.library_path,
         libraries_to_load_path=args.libraries_file,
         fmu_args=args
     )
