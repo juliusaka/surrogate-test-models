@@ -17,7 +17,7 @@ git lfs clone <repository-url>
 ```
 
 ## Install uv
-```uv``` is a powerful python dependency and environment manager. Please install it from [uv docs](https://uv.readthedocs.io/en/latest/installation.html).
+```uv``` is a powerful python dependency and environment manager. Please install it from [uv docs](https://docs.astral.sh/uv/getting-started/installation/).
 The easiest way is to use pip:
 ```bash
 pip install uv
