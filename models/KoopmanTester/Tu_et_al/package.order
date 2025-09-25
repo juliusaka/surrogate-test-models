@@ -1,5 +1,5 @@
 NonlinearModel
-KoopmanVersion
-BaseClasses
-both_models
 NonlinearModelInitialFromParams
+KoopmanVersion
+both_models
+BaseClasses

@@ -1,12 +1,12 @@
 within KoopmanTester.Tu_et_al;
 model KoopmanVersion "From Brunton et. al. 2021 Koopman Review"
-        extends BaseClasses.BaseModel;
-        // Koopmann Measurement function variables
-        Real y[3](start={x1_initial, x2_initial, x1_initial^2});
+extends BaseClasses.BaseModel;
+// Koopmann Measurement function variables
+Real y[3](start={x1_initial, x2_initial, x1_initial^2});
 
-        parameter Real A[3,3] = [mu, 0, 0;
-        0, lambda, -lambda;
-        0, 0, 2 * mu];
+parameter Real A[3,3] = [mu, 0, 0;
+0, lambda, -lambda;
+0, 0, 2 * mu];
 
 equation
   der(y) =  A * y;
