@@ -2,7 +2,24 @@ version = 1
 revision = 3
 requires-python = ">=3.13"
 
+[manifest]
+members = [
+    "dymola-python-interface-wrapper",
+    "surrogate-test-models",
+]
+
+[[package]]
+name = "dymola-python-interface-wrapper"
+version = "0.1.0"
+source = { editable = "packages/dymola-python-interface-wrapper" }
+
 [[package]]
 name = "surrogate-test-models"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "dymola-python-interface-wrapper" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dymola-python-interface-wrapper", editable = "packages/dymola-python-interface-wrapper" }]

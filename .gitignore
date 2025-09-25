@@ -48,7 +48,3 @@
 # Directories
 *.dymola_wd/
 *.vscode/
-
-# just for now: ignore and uv lock
-*.fmu
-uv.lock
