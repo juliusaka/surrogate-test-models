@@ -46,3 +46,6 @@
 *.fmu
 
 *.pyc
+
+# Dymola wd
+*.dymola_wd/
