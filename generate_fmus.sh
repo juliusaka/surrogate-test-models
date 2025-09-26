@@ -10,3 +10,4 @@ uv run export-fmu models/SeriesResonanceTesters/SimpleSeriesResonanceTwoDyn.mo .
 uv run export-fmu models/SeriesResonanceTesters/AdvancedSeriesResonance.mo ./models/SeriesResonanceTesters/libraries.txt
 uv run export-fmu models/ThermalTesters/StratifiedHeatFlowModel.mo ./models/ThermalTesters/libraries.txt
 uv run export-fmu models/ThermalTesters/ThreeStratifiedHeatFlowModels.mo ./models/ThermalTesters/libraries.txt
+uv run export-fmu models/MechanicalTesters/CartPole_polar.mo ./models/MechanicalTesters/libraries.txt

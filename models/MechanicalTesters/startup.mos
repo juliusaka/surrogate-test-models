@@ -1,0 +1,16 @@
+﻿startup_directory=Modelica.Utilities.System.getWorkDirectory();
+
+// read entries from file, this strings are opened line by line.
+// use backslashes in filepaths
+libs_path = "libraries.txt"
+libs = Modelica.Utilities.Streams.readFile(libs_path)
+
+for i in 1:size(libs, 1) loop
+  Modelica.Utilities.Streams.print("opening " + libs[i]);
+  openModel(libs[i], changeDirectory=false);
+end for;
+
+path_dymola_working_directory = ".dymola_wd";
+Modelica.Utilities.Files.createDirectory(path_dymola_working_directory);
+cd(path_dymola_working_directory);
+Modelica.Utilities.Streams.print("---> now in working directory: " + Modelica.Utilities.System.getWorkDirectory());
