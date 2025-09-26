@@ -37,7 +37,10 @@ To interact with dymola, the environment variable ```DYMOLA_PYTHON_INTERFACE``` 
 ```bash
 export DYMOLA_PYTHON_INTERFACE="C:\Program Files\Dymola 2024x\Modelica\Library\python_interface\dymola.egg"
 ```
-or set it in Windows Environment Variables. *(Search for "Environment Variables" in Windows Settings, add the environment variable, and restart your terminal or IDE to apply the changes.)*
+Starting in Dymola 2025x, this might be a *.whl file instead of an .egg file.
+
+You can also set it in Windows Environment Variables. *(Search for "Environment Variables" in Windows Settings, add the environment variable, and restart your terminal or IDE to apply the changes.)*
+
 
 
 Generate FMUs using the `export-fmu` command:

@@ -20,6 +20,7 @@ To interact with Dymola, you must set the `DYMOLA_PYTHON_INTERFACE` environment 
 ```bash
 export DYMOLA_PYTHON_INTERFACE="C:\Program Files\Dymola 2024x\Modelica\Library\python_interface\dymola.egg"
 ```
+Starting in Dymola 2025x, this might be a *.whl file instead of an .egg file.
 
 **Option 2: Windows Environment Variables**
 1. Search for "Environment Variables" in Windows Settings
