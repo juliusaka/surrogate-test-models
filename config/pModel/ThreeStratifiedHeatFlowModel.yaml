@@ -1,0 +1,166 @@
+defaults: 
+  - base_pModel
+
+RawData:
+  modelName: ThreeStratifiedHeatFlowModel
+  fmuPath: ..\modelica\ThermalTesters\ThermalTesters_ThreeStratifiedHeatFlowModels.fmu
+  versionName: v3
+  parameters:
+    C1: [2.0]
+    R1: [1.0]
+    C2: [1.0]
+    R2: [2.0]
+    C3: [1.0]
+    R3: [1.0]
+  parameters_default_lower_factor: 0.2
+  parameters_default_upper_factor: 5.0
+  parameters_include: true
+  parameters_sampling_strategy: R
+  states:
+    stratifiedHeatFlow1.partition[1].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[2].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[3].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[4].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[5].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[6].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[7].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[8].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[9].heatCapacitor.T:
+    stratifiedHeatFlow1.partition[10].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[1].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[2].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[3].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[4].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[5].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[6].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[7].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[8].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[9].heatCapacitor.T:
+    stratifiedHeatFlow2.partition[10].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[1].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[2].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[3].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[4].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[5].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[6].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[7].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[8].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[9].heatCapacitor.T:
+    stratifiedHeatFlow3.partition[10].heatCapacitor.T:
+  states_default_lower_value: 273.15
+  states_default_upper_value: 473.15
+  initial_states_include: false
+  initial_states_sampling_strategy: R
+  controls:
+    temperature_K_a: [273.15, 473.15]
+    temperature_K_b: [273.15, 473.15]
+  controls_include: true
+  controls_sampling_strategy: RROCS
+  controls_frequency_min_in_timesteps: 6
+  controls_frequency_max_in_timesteps: 30
+  outputs:
+    - stratifiedHeatFlow1.partition[1].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[1].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[1].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[2].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[2].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[2].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[3].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[3].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[3].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[4].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[4].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[4].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[5].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[5].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[5].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[6].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[6].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[6].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[7].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[7].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[7].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[8].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[8].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[8].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[9].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[9].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[9].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow1.partition[10].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow1.partition[10].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow1.partition[10].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[1].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[1].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[1].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[2].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[2].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[2].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[3].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[3].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[3].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[4].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[4].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[4].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[5].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[5].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[5].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[6].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[6].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[6].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[7].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[7].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[7].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[8].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[8].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[8].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[9].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[9].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[9].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow2.partition[10].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow2.partition[10].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow2.partition[10].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[1].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[1].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[1].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[2].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[2].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[2].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[3].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[3].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[3].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[4].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[4].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[4].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[5].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[5].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[5].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[6].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[6].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[6].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[7].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[7].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[7].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[8].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[8].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[8].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[9].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[9].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[9].thermalResistor.port_b.Q_flow
+    - stratifiedHeatFlow3.partition[10].heatCapacitor.port.Q_flow
+    - stratifiedHeatFlow3.partition[10].thermalResistor.port_a.Q_flow
+    - stratifiedHeatFlow3.partition[10].thermalResistor.port_b.Q_flow
+  Solver:
+    simulationStartTime: 0.0
+    simulationEndTime: 1.2
+    timestep: 2e-3
+    tolerance: 1e-6
+  n_samples: 2048
+dataset_prep:
+  n_samples: [2048]
+  states:
+    - all
+  outputs: 
+    - all
+  test_fraction: 0.12
+  start_time: 0.2
+  validation_fraction: 0.12

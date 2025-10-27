@@ -1,0 +1,56 @@
+defaults: 
+  - base_pModel
+
+RawData:
+  modelName: SimpleSeriesResonanceTwoDyn
+  fmuPath: ..\modelica\SeriesResonanceTesters\SeriesResonanceTesters_SimpleSeriesResonanceTwoDyn.fmu
+  versionName: v3
+  parameters:
+    L: [0.0159155]
+    C: [0.000159155]
+    R: [0.5]
+    c_p_Resistor: [703]
+    G_heat: [0.1]
+  parameters_default_lower_factor: 0.2
+  parameters_default_upper_factor: 5.0
+  parameters_include: false
+  parameters_sampling_strategy: R
+  states:
+    inductor1.i: [-10, 10]
+    capacitor1.v: [-150, 150]
+    heatCapacitor.T: [273.15, 373.15]
+  initial_states_include: false
+  initial_states_sampling_strategy: R
+  controls:
+    voltage: [-50, 50]
+    AmbientTemp_K: [273.15, 373.15]
+  controls_include: true
+  controls_sampling_strategy: RROCS
+  controls_frequency_min_in_timesteps: 6
+  controls_frequency_max_in_timesteps: 30
+  outputs:
+    - resistor1.v
+    - resistor1.i
+    - resistor1.LossPower
+    - resistor1.T_heatPort
+    - resistor1.R_actual
+    - inductor1.v
+    - capacitor1.i
+    - heatCapacitor.port.Q_flow
+    - thermalConductor.Q_flow
+  Solver:
+    simulationStartTime: 0.0
+    simulationEndTime: 0.6
+    timestep: 2e-4
+    tolerance: 1e-6
+  n_samples: 2048
+dataset_prep:
+  n_samples: [2048]
+  states:
+    - all
+  outputs: 
+    - all
+  test_fraction: 0.12
+  start_time: 0.1
+  validation_fraction: 0.12
+  

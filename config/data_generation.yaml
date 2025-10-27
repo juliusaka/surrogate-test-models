@@ -1,0 +1,7 @@
+defaults:
+  - base_data_gen
+  - _self_
+
+multiprocessing_processes: null # use all available cores
+memory_limit_per_worker: "2GiB" 
+overwrite: true
