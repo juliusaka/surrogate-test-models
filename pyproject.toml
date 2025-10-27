@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "dymola-python-interface-wrapper",
+    "bnode-core"
 ]
 
 [tool.uv.workspace]
@@ -15,3 +16,4 @@ members = [
 
 [tool.uv.sources]
 dymola-python-interface-wrapper = {workspace = true}
+bnode-core = { path="packages/bnode-core", editable = true }
