@@ -1,5 +1,6 @@
 defaults:
   - base_data_gen
+  - pModel: SHF
   - _self_
 
 multiprocessing_processes: null # use all available cores
