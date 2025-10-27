@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: SteamCycle_01
-  fmuPath: ..\modelica\ClaRaTester\ClaRaTester_SteamCycle.fmu
+  fmuPath: models\ClaRaTester\SteamCycle_01.fmu
   versionName: v3
   parameters_include: false
   states:
