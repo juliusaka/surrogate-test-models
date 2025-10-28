@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: StratifiedHeatFlowModel
-  fmuPath: ..\modelica\ThermalTesters\ThermalTesters_StratifiedHeatFlowModel.fmu
+  fmuPath: models/ThermalTesters/StratifiedHeatFlowModel.fmu
   versionName: v3
   parameters:
     C: [1.8]
@@ -94,13 +94,13 @@ RawData:
     simulationEndTime: 1.2
     timestep: 2e-3
     tolerance: 1e-6
-  n_samples: 1024
+  n_samples: 256
 dataset_prep:
-  n_samples: [1024]
+  n_samples: [256]
   states:
     - all
   outputs: 
     - all
   test_fraction: 0.12
   start_time: 0.2
-  validation_fraction: 0.12
+  validation_fraction: 0.5

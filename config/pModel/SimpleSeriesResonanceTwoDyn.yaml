@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: SimpleSeriesResonanceTwoDyn
-  fmuPath: ..\modelica\SeriesResonanceTesters\SeriesResonanceTesters_SimpleSeriesResonanceTwoDyn.fmu
+  fmuPath: models/SeriesResonanceTesters/SeriesResonanceTesters_SimpleSeriesResonanceTwoDyn.fmu
   versionName: v3
   parameters:
     L: [0.0159155]
@@ -43,14 +43,14 @@ RawData:
     simulationEndTime: 0.6
     timestep: 2e-4
     tolerance: 1e-6
-  n_samples: 2048
+  n_samples: 256
 dataset_prep:
-  n_samples: [2048]
+  n_samples: [256]
   states:
     - all
   outputs: 
     - all
   test_fraction: 0.12
   start_time: 0.1
-  validation_fraction: 0.12
+  validation_fraction: 0.5
   
