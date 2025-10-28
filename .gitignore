@@ -49,3 +49,7 @@
 *.dymola_wd/
 *.vscode/
 outputs/*
+data/*
+
+# Files
+fmu_variable_names.txt

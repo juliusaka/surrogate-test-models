@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: SteamCycle_01
-  fmuPath: ..\modelica\ClaRaTester\ClaRaTester_SteamCycle.fmu
+  fmuPath: models\ClaRaTester\SteamCycle_01.fmu
   versionName: v3
   parameters_include: false
   states:
@@ -114,7 +114,7 @@ RawData:
   controls:
     u: [0.6, 1.1]
   controls_include: true
-  controls_sampling_strategy: RS
+  controls_sampling_strategy: RROCS
   controls_frequency_min_in_timesteps: 2
   controls_frequency_max_in_timesteps: 100
   outputs:
@@ -130,13 +130,13 @@ RawData:
     simulationEndTime: 6000
     timestep: 5
     tolerance: 1e-6
-  n_samples: 100
+  n_samples: 512
 dataset_prep:
-  n_samples: [100]
+  n_samples: [512]
   states:
     - all
   outputs: 
     - all
-  test_fraction: 0.96
+  test_fraction: 0.12
   start_time: 1000
-  validation_fraction: 0.02
+  validation_fraction: 0.12

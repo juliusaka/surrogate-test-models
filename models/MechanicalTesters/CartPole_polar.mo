@@ -1,4 +1,4 @@
-﻿within MechanicalTesters;
+within MechanicalTesters;
 model CartPole_polar "cart pole"
   // From the lecture system simulation by Johannes Brunnemann at University of Technolog Hamburg (2024)
   import Modelica.Units.SI;
@@ -9,7 +9,8 @@ model CartPole_polar "cart pole"
   parameter SI.Mass M = 1 "Masse des Schlittens";
   parameter SI.Length L = 1 "Länge des Pendels";
 
-  parameter SI.Position y_start = 0.9*L "y start position of pendulum in [-L,L]";
+  parameter Real pendulum_start_rel(min=-1.0, max=1.0) = 0.9 "relative tart position of pendulum in [-1, 1]";
+  parameter SI.Position y_start = pendulum_start_rel * L "y start position of pendulum in [-L,L]";
   parameter SI.Velocity vy_start = 0 "start velocity of pendulum in y-direction";
   parameter SI.Velocity vx_start = 0 "start velocity of pendulum in x-direction";
   parameter SI.Position xs_start = 0;

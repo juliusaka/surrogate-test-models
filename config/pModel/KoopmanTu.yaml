@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: KoopmannTu
-  fmuPath: ..\modelica\KoopmanTester\KoopmanTester_Tu_0et_0al_NonlinearModel.fmu
+  fmuPath: models\KoopmanTester\KoopmanTester_Tu_0et_0al_NonlinearModel.fmu
   versionName: v2
   parameters:
     lambda: [-10, -0.01, -1]
@@ -17,14 +17,10 @@ RawData:
     x2: [-50, 50]
   initial_states_include: true
   initial_states_sampling_strategy: R
-  # controls:
-  #   u: [-100, 100]
   controls_include: false
   controls_sampling_strategy: RROCS
   controls_frequency_min_in_timesteps: 6
   controls_frequency_max_in_timesteps: 30
-  # outputs:
-  #   - 
   Solver:
     simulationStartTime: 0.0
     simulationEndTime: 10.0

@@ -3,11 +3,12 @@ defaults:
 
 RawData:
   modelName: chaoticLorenz
-  fmuPath: ../modelica/KoopmanTester/KoopmanTester_chaotic_0lorenz_0system_chaoticLorenz.fmu
-  versionName: v1
-  # parameters:
-  #   lambda: [-10, -0.01, -1]
-  #   mu: [-10, -0.01, -0.5]
+  fmuPath: models\KoopmanTester\KoopmanTester_chaotic_0lorenz_0system_chaoticLorenz.fmu
+  versionName: v2
+  parameters:
+    sigma: [5.0, 15.0, 10.0]
+    rho: [20.0, 30.0, 28.0]
+    beta: [2.0, 4.0, 2.6666666667]
   parameters_default_lower_factor: 0.2
   parameters_default_upper_factor: 5.0
   parameters_include: false
@@ -18,14 +19,10 @@ RawData:
     z: [-25, 25]
   initial_states_include: true
   initial_states_sampling_strategy: R
-  # controls:
-  #   u: [-100, 100]
   controls_include: false
   controls_sampling_strategy: RROCS
   controls_frequency_min_in_timesteps: 6
   controls_frequency_max_in_timesteps: 30
-  # outputs:
-  #   - 
   Solver:
     simulationStartTime: 0.0
     simulationEndTime: 10.0
