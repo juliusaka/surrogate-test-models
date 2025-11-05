@@ -14,7 +14,7 @@ RawData:
     R3: [1.0]
   parameters_default_lower_factor: 0.2
   parameters_default_upper_factor: 5.0
-  parameters_include: true
+  parameters_include: false
   parameters_sampling_strategy: R
   states:
     stratifiedHeatFlow1.partition[1].heatCapacitor.T:
