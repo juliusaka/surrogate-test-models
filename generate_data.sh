@@ -17,6 +17,7 @@ uv run data_preperation pModel=CartPole
 # # Series Resonance Tester # #
 uv run data_generation pModel=SimpleSeriesResonance
 uv run data_preperation pModel=SimpleSeriesResonance
+uv run data_preperation pModel=SimpleSeriesResonance pModel.dataset_prep.end_time=0.1022 pModel.dataset_prep.dataset_suffix=pytest
 uv run data_generation pModel=SimpleSeriesResonanceTwoDyn
 uv run data_preperation pModel=SimpleSeriesResonanceTwoDyn
 # # # # generate more data with other sampling strateiges for simple series resonance
@@ -29,10 +30,12 @@ uv run data_preperation pModel=SimpleSeriesResonance pModel.RawData.controls_inc
 # # Thermal Testers (Stratified Heat Flow, SHF)
 uv run data_generation pModel=SHF
 uv run data_preperation pModel=SHF
+uv run data_preperation pModel=SHF pModel.dataset_prep.end_time=0.222 pModel.dataset_prep.dataset_suffix=pytest
 uv run data_generation pModel=SHF_three
 uv run data_preperation pModel=SHF_three
 # # # # generate more data with other sampling strategies for SHF
 uv run data_generation pModel=SHF pModel.RawData.parameters_include=true
 uv run data_preperation pModel=SHF pModel.RawData.parameters_include=true
+uv run data_preperation pModel=SHF pModel.RawData.parameters_include=true pModel.dataset_prep.end_time=0.222 pModel.dataset_prep.dataset_suffix=pytest
 uv run data_generation pModel=SHF pModel.RawData.controls_sampling_strategy=RS pModel.RawData.n_samples=100
 uv run data_preperation pModel=SHF pModel.RawData.controls_sampling_strategy=RS pModel.RawData.n_samples=100 pModel.dataset_prep.test_fraction=1.0 pModel.dataset_prep.validation_fraction=0.0
