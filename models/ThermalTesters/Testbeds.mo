@@ -9,8 +9,8 @@ package Testbeds
                                                              annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
     Modelica.Blocks.Sources.Sine sine annotation (Placement(transformation(extent={{-100,-20},{-80,0}})));
   equation
-    connect(step.y, stratifiedHeatFlowModel.temperature_K_a) annotation (Line(points={{-79,30},
-            {-32,30},{-32,-8},{-20.2857,-8},{-20.2857,0.666667}},                                                         color={0,0,127}));
+    connect(step.y, stratifiedHeatFlowModel.temperature_K_a) annotation (Line(points={{-79,30},{-32,30},{-32,-8},{-20.2857,-8},{-20.2857,0.666667}},
+                                                                                                                          color={0,0,127}));
     connect(stratifiedHeatFlowModel.temperature_K_b, realExpression.y) annotation (Line(points={{8.28571,
             0.666667},{8.28571,-8},{54,-8},{54,0},{59,0}},                                                      color={0,0,127}));
     annotation (
@@ -27,10 +27,10 @@ package Testbeds
     Modelica.Blocks.Sources.Step step(height=100, offset=20) annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
     Modelica.Blocks.Sources.Sine sine annotation (Placement(transformation(extent={{-100,-20},{-80,0}})));
   equation
-    connect(step.y, threeStratifiedHeatFlowModels.temperature_K_a) annotation (Line(points={{-79,30},
-            {-24,30},{-24,-14},{-11.1111,-14},{-11.1111,-3}},                                                                   color={0,0,127}));
-    connect(threeStratifiedHeatFlowModels.temperature_K_b, realExpression.y) annotation (Line(points={{11.1111,
-            -3},{11.1111,-14},{54,-14},{54,0},{59,0}},                                                                color={0,0,127}));
+    connect(step.y, threeStratifiedHeatFlowModels.temperature_K_a) annotation (Line(points={{-79,30},{-24,30},{-24,-14},{-11.1111,-14},{-11.1111,-3}},
+                                                                                                                                color={0,0,127}));
+    connect(threeStratifiedHeatFlowModels.temperature_K_b, realExpression.y) annotation (Line(points={{11.1111,-3},{11.1111,-14},{54,-14},{54,0},{59,0}},
+                                                                                                                      color={0,0,127}));
     annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(preserveAspectRatio=false)));
   end ThreeStratifiedHeatFlowModelTester;
 
