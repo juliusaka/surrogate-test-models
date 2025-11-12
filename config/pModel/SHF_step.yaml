@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: StratifiedHeatFlowModel
-  fmuPath: ..\modelica\ThermalTesters\ThermalTesters_StratifiedHeatFlowModel.fmu
+  fmuPath: ../modelica/ThermalTesters/ThermalTesters_StratifiedHeatFlowModel.fmu
   versionName: v3
   parameters:
     C: [1.8]

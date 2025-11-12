@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: chaoticLorenz
-  fmuPath: models\KoopmanTester\KoopmanTester_chaotic_0lorenz_0system_chaoticLorenz.fmu
+  fmuPath: models/KoopmanTester/KoopmanTester_chaotic_0lorenz_0system_chaoticLorenz.fmu
   versionName: v2
   parameters:
     sigma: [5.0, 15.0, 10.0]

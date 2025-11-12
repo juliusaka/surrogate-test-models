@@ -3,7 +3,7 @@ defaults:
 
 RawData:
   modelName: KoopmannTu
-  fmuPath: models\KoopmanTester\KoopmanTester_Tu_0et_0al_NonlinearModel.fmu
+  fmuPath: models/KoopmanTester/KoopmanTester_Tu_0et_0al_NonlinearModel.fmu
   versionName: v2
   parameters:
     lambda: [-10, -0.01, -1]
