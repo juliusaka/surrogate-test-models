@@ -18,6 +18,22 @@ git lfs clone <repository-url>
 
 `git lfs` should only download the most-current version of files. If you want to free up disk space, you can use `git lfs prune` to locally delete previous versions.
 
+### Cloning submodules
+
+Run
+
+```
+git submodule update --init
+```
+
+If you do not have access to the submodules, run in the respective libraries
+
+```
+cd packages/bnode-core
+git remote set-url --add origin git@github.com:juliusaka/balanced-neural-odes.git
+```
+
+
 ## Install uv
 ```uv``` is a powerful python dependency and environment manager. Please install it from [uv docs](https://docs.astral.sh/uv/getting-started/installation/).
 The easiest way is to use pip:
